@@ -1,203 +1,222 @@
 <html>
 
-    <head>
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		.lamps {
 
-        <style>
+			/* display: grid; */
 
-            .lamps {
+			gap: 2rem;
 
-    display: grid;
+			grid-template-columns: repeat(4, 1fr);
 
-    gap: 2rem;
+			margin-top: 3rem;
 
-    grid-template-columns: repeat(4, 1fr);
+		}
 
-    margin-top: 3rem;
+		@keyframes swing {
 
-}
+			0% {
+				transform: rotate(30deg);
+			}
 
-@keyframes swing{
+			50% {
+				transform: rotate(-30deg);
+			}
 
-    0% {transform:rotate(30deg);}
+			100% {
+				transform: rotate(30deg);
+			}
 
-    50% {transform:rotate(-30deg);}
+		}
 
-    100% {transform:rotate(30deg);}
+		@keyframes glow {
 
-}
+			0% {
+				text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #EAB72F, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #EAB72F, 0 0 70px #EA5C2F
+			}
 
-@keyframes glow{
+			25% {
+				text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #36EA2F, 0 0 40px #36EA2F, 0 0 50px #36EA2F, 0 0 60px #36EA2F, 0 0 70px #36EA2F
+			}
 
-    0% { text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #EAB72F, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #EAB72F, 0 0 70px #EA5C2F}
+			50% {
+				textShadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #362FEA, 0 0 60px #e60073, 0 0 70px #362FEA
+			}
 
-    25% { text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #36EA2F, 0 0 40px #36EA2F, 0 0 50px #36EA2F, 0 0 60px #36EA2F, 0 0 70px #36EA2F}
+			100% {
+				textShadow: 0 0 10px #fff, 0 0 20px #ff4da6, 0 0 30px #362FEA, 0 0 40px #EA5C2F, 0 0 50px #EAB72F, 0 0 60px #ff4da6, 0 0 70px #ff4da6
+			}
 
-    50% { textShadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #362FEA, 0 0 60px #e60073, 0 0 70px #362FEA}
+		}
 
-    100% { textShadow: 0 0 10px #fff, 0 0 20px #ff4da6, 0 0 30px #362FEA, 0 0 40px #EA5C2F, 0 0 50px #EAB72F, 0 0 60px #ff4da6, 0 0 70px #ff4da6}
+		.glow {
 
-}
+			font-size: 80px;
 
-.glow {
+			color: #fff;
 
-    font-size: 80px;
+			text-align: center;
 
-    color: #fff;
+			animation: glow 1s infinite ease-in-out alternate;
 
-    text-align: center;
+		}
 
-    animation: glow 1s infinite ease-in-out alternate;
+		.base {
 
-}
+			background-color: #d2691e;
 
-.base{
+			width: 100px;
 
-    background-color:#d2691e;
+			height: 53px;
 
-    width:100px;
+			border-bottom-right-radius: 230px;
 
-    height:53px;
+			border-bottom-left-radius: 230px;
 
-    border-bottom-right-radius:230px;
+		}
 
-    border-bottom-left-radius:230px;
+		.fire {
 
-}
+			height: 28px;
 
-.fire{
+			width: 18px;
 
-    height:28px;
+			background-color: yellow;
 
-    width:18px;
+			border-radius: 50%;
 
-    background-color:yellow;
+			animation: swing 2s infinite ease-in-out;
 
-    border-radius:50%;
+			border: 1px solid red
+		}
 
-    animation: swing 2s infinite ease-in-out;
+		body {
 
-    border: 1px solid red
+			background: black;
 
-}
+			color: white;
 
-body {
+			text-align: center;
 
-    background: black;
+			box-sizing: border-box;
 
-    color:white;
+			font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
 
-    text-align:center;
+				Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 
-    box-sizing: border-box;
+			margin: 0;
 
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+		}
 
-        Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+		main {
 
-    margin: 0;
+			margin: 4rem auto 6rem;
 
-}
+			max-width: 650px;
 
-main {
+			width: 90vw;
 
-    margin: 4rem auto 6rem;
+		}
 
-    max-width: 650px;
+		div {
 
-    width: 90vw;
+			margin: 0 auto;
 
-}
+			text-align: center;
 
-div{
+		}
 
-    margin:0 auto;
+		a {
 
-    text-align:center;
+			font-size: 20px;
 
-}
+			color: #61dafb;
 
-a {
+			text-decoration: none;
 
-  font-size: 25px;
+		}
 
-  color: #61dafb;
+		a:hover {
 
-  text-decoration: none;
+			color: lime;
 
-}
+		}
 
-a:hover {
+		button {
 
-  color: lime;
+			width: auto;
 
-}
+			padding-left: 20px;
 
-button{
+			padding-right: 20px;
 
-  width: auto;
+			border: solid #2f2f2f;
 
-  padding-left: 20px;
+			border-radius: 50px;
 
-  padding-right: 20px;
-  
-  border: solid #2f2f2f;
+			background: #2f2f2f;
 
-  border-radius: 50px;
+		}
+	</style>
 
-  background: #2f2f2f;
+</head>
 
-}
+<body>
 
-        </style>
+	<main>
 
-    </head>
+		<h1 class="glow">Wishing     </h1>
+		<h1 class="glow">Wishing you</h1>
+		<h1 class="glow"> 😇 </h1>
+		<h1 class="glow"> Happy and Safe </h1>
+		<h1 class="glow"> 😃 😎 </h1>
+		<h1 class="glow">🤩 Diwali x🤩 </h1>
+		<div class="lamps">
 
- <body>
+			<div>
 
-  <main>
+				<div class="fire"></div>
 
-   <h1 class="glow">Wishing 😇 you Happy😃 and Safe😎 Diwali🤩🤩</h1>
+				<div class="base"></div>
 
-   <div class="lamps">
+			</div>
 
-    <div>
+			<div>
 
-     <div class="fire"></div>
+				<div class="fire"></div>
 
-     <div class="base"></div>
+				<div class="base"></div>
 
-    </div>
+			</div>
 
-    <div>
+			<div>
 
-     <div class="fire"></div>
+				<div class="fire"></div>
 
-     <div class="base"></div>
+				<div class="base"></div>
 
-    </div>
+			</div>
 
-    <div>
+			<div>
 
-     <div class="fire"></div>
+				<div class="fire"></div>
 
-     <div class="base"></div>
+				<div class="base"></div>
 
-    </div>
+			</div>
 
-    <div>
+		</div>
 
-     <div class="fire"></div>
+		<h3 class="glow">~ by Vedansh</h3>
 
-     <div class="base"></div>
+		<h4> <button> <a href="https://vedz.w3spaces.com"> Tap to visit my Website 😊 </a> </button> </h4>
 
-    </div>
+	</main>
 
-   </div>
+</body>
 
-   <h3 class="glow">~ by Vedansh</h3>
-
- <h4> <button> <a href="https://vedz.w3spaces.com"> Tap to visit my Website 😊 </a> </button> </h4>
-
-  </main>
-
-</body></html>
+</html>
